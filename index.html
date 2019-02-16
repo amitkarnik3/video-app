@@ -24,6 +24,9 @@
                                         0.3333 0.3333 0.3333 0 0
                                         0      0      0      1 0" />
         </filter>
+        <filter id="blurEffect">
+            <feGaussianBlur stdDeviation="4"/>
+        </filter>
     </defs>
 </svg>
 <video controls autoplay playsinline></video>
@@ -66,9 +69,9 @@
             video.muted = true;
             video.volume = 0;
             video.srcObject = camera;
-            video.style.webkitFilter = 'url(#blackandwhite)';
-            video.style.mozFilter = 'url(#blackandwhite)';
-            video.style.filter = 'url(#blackandwhite)';
+            video.style.webkitFilter = 'url(#blur)';
+            video.style.mozFilter = 'url(#blur)';
+            video.style.filter = 'url(#blur)';
             recorder = RecordRTC(camera, {
                 type: 'video'
             });
